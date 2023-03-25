@@ -40,7 +40,7 @@ export class SurgeryService {
     }
 
     async validatePatient(surgery: Surgery, @Request() req): Promise<any> {
-        return this.http.get('https://puente-solidaridad-patient.herokuapp.com/v1/patient/' + surgery.patientId, {
+        return this.http.get('https://puente-solidaridad-patients.herokuapp.com/v1/patient/' + surgery.patientId, {
             headers: {
                 'Authorization': req.headers.authorization,
             }  
@@ -51,7 +51,7 @@ export class SurgeryService {
     }
 
     async validatePhysician(physicianId: string, @Request() req): Promise<any> {
-        return this.http.get('https://puente-solidaridad-physician.herokuapp.com/v1/physician/' + physicianId, {
+        return this.http.get('https://puente-solidaridad-physicians.herokuapp.com/v1/physician/' + physicianId, {
             headers: {
                 'Authorization': req.headers.authorization,
             }  
